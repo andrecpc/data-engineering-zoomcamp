@@ -1,5 +1,5 @@
 
-1.
+# 1.
 
 root@de-zoomcamp:~# gcloud --version
 Google Cloud SDK 368.0.0
@@ -11,7 +11,7 @@ gsutil 5.6
 minikube 1.24.0
 skaffold 1.35.1
 
-2.
+# 2.
 
 (base) root@de-zoomcamp:~/data-engineering-zoomcamp/week_1_basics_n_setup/1_terraform_gcp/terraform# export GOOGLE_APPLICATION_CREDENTIALS=~/.gc/red-height-339014-4dcfbdda3016.json
 (base) root@de-zoomcamp:~/data-engineering-zoomcamp/week_1_basics_n_setup/1_terraform_gcp/terraform# gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
@@ -41,7 +41,7 @@ following symbols:
 
 Terraform will perform the following actions:
 
-  # google_bigquery_dataset.dataset will be created
+  \# google_bigquery_dataset.dataset will be created
   + resource "google_bigquery_dataset" "dataset" {
       + creation_time              = (known after apply)
       + dataset_id                 = "trips_data_all"
@@ -68,7 +68,7 @@ Terraform will perform the following actions:
         }
     }
 
-  # google_storage_bucket.data-lake-bucket will be created
+  \# google_storage_bucket.data-lake-bucket will be created
   + resource "google_storage_bucket" "data-lake-bucket" {
       + force_destroy               = true
       + id                          = (known after apply)
@@ -111,7 +111,7 @@ following symbols:
 
 Terraform will perform the following actions:
 
-  # google_bigquery_dataset.dataset will be created
+  \# google_bigquery_dataset.dataset will be created
   + resource "google_bigquery_dataset" "dataset" {
       + creation_time              = (known after apply)
       + dataset_id                 = "trips_data_all"
@@ -138,7 +138,7 @@ Terraform will perform the following actions:
         }
     }
 
-  # google_storage_bucket.data-lake-bucket will be created
+  \# google_storage_bucket.data-lake-bucket will be created
   + resource "google_storage_bucket" "data-lake-bucket" {
       + force_destroy               = true
       + id                          = (known after apply)
@@ -183,16 +183,16 @@ google_bigquery_dataset.dataset: Creation complete after 2s [id=projects/red-hei
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 (base) root@de-zoomcamp:~/data-engineering-zoomcamp/week_1_basics_n_setup/1_terraform_gcp/terraform#
 
-3.
+# 3.
 
-53024
+**53024**
 
 select count(tpep_pickup_datetime) from yellow_taxi_data
 where tpep_pickup_datetime >= '2021-01-15' and tpep_pickup_datetime < '2021-01-16';
 
-4.
+# 4.
 
-2021-01-20
+**2021-01-20**
 
 select max(tip_amount) as max_tip_amount, cast(tpep_pickup_datetime as date) as pickup_date from yellow_taxi_data
 where extract(month from tpep_pickup_datetime) = 1
@@ -200,9 +200,9 @@ group by pickup_date
 order by max_tip_amount desc
 limit 1;
 
-5.
+# 5.
 
-Upper East Side North
+**Upper East Side North**
 
 with zones as (
 select yellow_taxi_data."PULocationID" as pulocationid_ ,yellow_taxi_data."DOLocationID" as dolocationid_, tz1.zone as engaged_zone, tz2.zone as disengaged_zone from yellow_taxi_data 
@@ -216,9 +216,9 @@ group by disengaged_zone
 order by c desc
 limit 1;
 
-6. 
+# 6. 
 
-Alphabet City / Unknown
+**Alphabet City / Unknown**
 
 with zones as (
 select yellow_taxi_data."PULocationID" as pulocationid_, yellow_taxi_data."DOLocationID" as dolocationid_, yellow_taxi_data.total_amount as total_amount_, tz1.zone as engaged_zone, tz2.zone as disengaged_zone 
