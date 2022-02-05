@@ -51,3 +51,12 @@ select * from `red-height-339014.trips_data_all.external_table_fhv`;
 select count(*) from `red-height-339014.trips_data_all.external_table_fhv_part_clast__1`
 where pickup_datetime between '2019-01-01' and '2019-03-31'
 and dispatching_base_num in ('B00987', 'B02060', 'B02279');
+
+-- 6. --
+
+-- Huge improvement in data processed
+-- Huge improvement in query performance
+
+-- 7. --
+
+-- Row
