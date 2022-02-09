@@ -54,9 +54,9 @@ and dispatching_base_num in ('B00987', 'B02060', 'B02279');
 
 -- 6. --
 
--- Huge improvement in data processed
--- Huge improvement in query performance
+-- No improvements
+-- Can be worse due to metadata
 
 -- 7. --
 
--- Row
+-- Columnar
